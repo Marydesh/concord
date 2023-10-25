@@ -1,0 +1,57 @@
+{
+  "weather-example": {
+    "cod": "200",
+    "message": 0,
+    "cnt": 40,
+    "list": [],
+    "city": {
+      "id": 4930956,
+      "name": "Boston",
+      "coord": {
+        "lat": 42.3554,
+        "lon": -71.0605
+      },
+      "country": "US",
+      "population": 617594,
+      "timezone": -14400,
+      "sunrise": 1698145633,
+      "sunset": 1698184165
+    }
+  },
+  "list-item-example": {
+    "dt": 1698181200,
+    "main": {
+      "temp": 288.96,
+      "feels_like": 288.14,
+      "temp_min": 288.96,
+      "temp_max": 289.07,
+      "pressure": 1027,
+      "sea_level": 1027,
+      "grnd_level": 1025,
+      "humidity": 59,
+      "temp_kf": -0.11
+    },
+    "weather": [
+      {
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04d"
+      }
+    ],
+    "clouds": {
+      "all": 75
+    },
+    "wind": {
+      "speed": 2.75,
+      "deg": 221,
+      "gust": 6.14
+    },
+    "visibility": 10000,
+    "pop": 0,
+    "sys": {
+      "pod": "d"
+    },
+    "dt_txt": "2023-10-24 21:00:00"
+  }
+}
