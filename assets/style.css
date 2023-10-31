@@ -1,0 +1,89 @@
+/* this makes your life easier */
+* {
+    box-sizing: border-box;
+}
+
+/* these are some common css resets */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    /* background-image: linear-gradient(45deg, #ffffff, #e2faff); */
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+header {
+    background-image: linear-gradient(90deg, blue, cyan);
+}
+header h1{
+    text-align: center;
+}
+input {
+    padding: 0.5rem;
+}
+/* padding makes buttons easier to press on mobile devices! */
+/* removing borders can make buttons looks more modern */
+button {
+    cursor: pointer;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+#wrapper {
+    display: grid;
+    /* this means two columns with a 1:3 ratio */
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    padding: 2rem;
+
+    /* this limits the width */
+    /* this pair of properties is a useful responsive-design trick that doesn't require a media query */
+    width: 1200px;
+    max-width: 100%;
+    /* this makes the wrapper center itself */
+    /* margin auto only works if you have a set width */
+    margin: auto;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    /* you can use gap on anything with a display of grid/flex */
+    gap: .5rem;
+}
+ul {
+    /* this resets the style of lists */
+    list-style: none;
+    padding: 0;
+}
+ul button {
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+    margin: 0.25rem;
+}
+
+#cities,
+#current {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+#future {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-around;
+    gap: 1rem;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+

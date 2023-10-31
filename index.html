@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js"></script>
-    <title>Title goes here!</title>
+    <script src="https://kit.fontawesome.com/b1bdfa1f97.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.10/dayjs.min.js" defer></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Weather Dashboard App</title>
 </head>
 <body>
-    <input type="text" id="cityInput" >
-    <button id="searchButton">Search Now</button>
-    <div id="cities"></div>
-    <div id="current"></div>
+    <header>
+        <h1>Weather dashboard</h1>
+    </header>
+    <div id="wrapper">
+        <aside>
+            <h2>Search for a city</h2>
+            <input type="text" id="cityInput" >
+            <button id="searchButton">Search Now</button>
+            <ul id="history"></ul>
+        </aside>
+        <main>
+            <div id="cities"></div>
+            <div id="current"></div>
+            <div id="future"></div>
+        </main>
+    </div>
 
     <script src="./assets/index.js"></script>
 </body>
