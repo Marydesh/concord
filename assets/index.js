@@ -15,18 +15,11 @@ const myApiKey = "e9b1c62b40d4ec53f934011c833d6262";
 // https://openweathermap.org/api/one-call-3#how
 
 const weatherURI = (lat, lon) => `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${myApiKey}&units=imperial`
-
+// getting icons from the font awesome
 const icons = {
     cloudy: `<i class="fa-solid fa-cloud"></i>`,
     sunny: `<i class="fa-solid fa-sun"></i>`
 }
-
-/*
-^ above statment is same as below
-function weatherURI(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${myApiKey}`
-}
-*/
 
 
 
@@ -41,7 +34,7 @@ async function searchCities(query) {
         return null;
     }
 
-
+// calling weather api /displaying 'loading' when waiting for a result/response data to appear
     let urlString = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInputValue}&limit=10&appid=${myApiKey}`;
     citiesDiv.innerHTML = "Loading..."
     let res = await fetch(urlString)
@@ -57,7 +50,7 @@ async function searchCities(query) {
 function getSavedHistory() {
     return JSON.parse(localStorage.getItem('concord-searchHistory') || "[]")
 }
-
+// save search and render serach history functions to get acces to the cities that we searched for prior
 function addToSearchHistory(query) {
     let savedHistory = getSavedHistory()
     savedHistory.push(query)
@@ -84,7 +77,7 @@ function renderSearchHistory() {
 }
 
 renderSearchHistory()
-
+// display city function, with an option to slect current weather and a future 5 day forecast
 function displayCities(cities) {
     currentDiv.innerHTML = ""
     futureDiv.innerHTML = ""
@@ -109,10 +102,10 @@ async function displayCurrent(lat, lon) {
     let data = await res.json()
     console.log(data)
 
-    // 
+    // display the current weather + icon conditions
     let current = data.list[0]
     let currentWeather = current.weather[0]
-    console.log("currentWeather: ", currentWeather)
+    // console.log("currentWeather: ", currentWeather)
     let cloudy = currentWeather.description.includes("cloud")
     let icon = icons[cloudy ? "cloudy" : "sunny"]
 
@@ -128,7 +121,7 @@ async function displayCurrent(lat, lon) {
         </div>
     `
 }
-
+// async function to get the latitude and longitude, display the future weather for the city selected based on those values 
 async function displayFuture(lat, lon) {
     citiesDiv.innerHTML = ""
     let res = await fetch(weatherURI(lat, lon))
@@ -142,7 +135,7 @@ async function displayFuture(lat, lon) {
         renderDaily(day)
     })
 }
-
+// render and display weather information for the specific day. day as a parameter
 function renderDaily(day) {
     let currentWeather = day.weather[0]
     console.log("currentWeather: ", currentWeather)
